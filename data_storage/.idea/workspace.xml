@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb8333d3-7de1-4fde-ae89-4b3ce81e230e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MySQL/SQL常用语句.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MySQL/Study_mysql.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,7 +44,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="72" />
     <option name="y" value="498" />
     <option name="width" value="2100" />
@@ -131,12 +132,12 @@
       <option name="presentableId" value="Default" />
       <updated>1547183503544</updated>
       <workItem from="1547183505353" duration="642000" />
-      <workItem from="1547187845516" duration="721000" />
+      <workItem from="1547187845516" duration="1326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1363000" />
+    <option name="totallyTimeSpent" value="1968000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
