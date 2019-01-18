@@ -1,0 +1,21 @@
+Scrapy框架的架构：
+Engine。引擎，处理整个系统的数据流处理、触发事务、是整个框架的核心。
+Item。项目，它定义了爬取结果的数据结构，爬取的数据会被赋值成该Item对象。
+Scheduler。调度器，接受引擎发过来的请求并将其加入队列中，在引擎中再次请求的时候将请求提供给引擎。
+Downloader。下载器，下载网页内容，并将网页内容返回给蜘蛛。
+Spiders。蜘蛛，其内定义了爬取的逻辑和网页的解析规则，它主要负责解析响应并生成提取结果和新的请求。
+Item Pipeline。项目管道，负责处理由蜘蛛从网页中抽取的项目，它的主要任务是清洗，验证和存储数据。
+Downloader Middlewares。下载器中间件，位于引擎和下载器之间的钩子框架，主要处理引擎与下载器之间的请求和响应。
+Spider Middlewares。蜘蛛中间件，位于引擎和蜘蛛之间的钩子框架，主要处理向蜘蛛输入的相应和输出的结果及新的请求。
+
+2.数据流
+Scrapy中的数据流由引擎控制，数据流的过程如下：
+1.Engine首先打开一个网站，找到处理该网站的Spider，并向该Spider请求第一个要爬去的URL。
+2.Engine从Spider中获取到第一个要爬去的URL，并通过Scheduler以Request的形式调度。
+3.Engine向Scheduler请求下一个要爬去的URL。
+4.Scheduler返回下一个要爬去的URL给Engine，Engine将URL通过Downloader Middlewares转发给Downloader下载
+5.一旦页面下载完毕，Downloader生成该页面的Response，并将其通过Downloader Middlewares发送给Engine。
+6.Engine从下载器中接受到Response，并将其通过Spider Middlewares发送给Spider处理。
+7.Spider处理Response，并返回提取到的Item及新的Request给Engine
+8.Engine将Spider返回的Item给Item Pipeline，将新的Request给Scheduler。
+9.重复第(2)步，直到Scheduler中没有更多的Request，Engine关闭该网站，爬取结束。

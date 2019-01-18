@@ -1,0 +1,14 @@
+创建项目：
+scrapy startproject tutorial
+这个命令可以创建一个名为tutorial的文件夹。如果提示权限问题，可以加sudo运行该命令
+
+tutorial文件夹结构说明：
+scrapy.cfg	#Scrapy部署时的配置文件
+tutorial		#项目的模块，需要从这里引入
+	__init__.py	
+	items.py		#Items的定义，定义爬取的数据结构
+	middlewares.py	#Middlewares的定义，定义爬取时的中间件
+	pipelines.py	#Pipelines的定义，定义数据管道
+	settings.py	#配置文件
+	spiders		#放置Spiders的文件夹
+		__init__.py

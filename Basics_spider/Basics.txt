@@ -1,0 +1,17 @@
+HTTP(Hyper Text Transfer Protocol)，超文本传输协议，是用于从网络传输超文本数据到本地浏览器的传送协议,是由"W3C"和"IETF"共同合作制定的规范
+
+W3C(World Wide Web Consortium)，万维网联盟，是万维网的主要国际标准组织。
+
+IETF(Internet Engineering Task Force),Internet工程任务小组，负责互联网标准的开发和推动
+
+HTMLS(Hyper Text Transfer Protocol over Secure Socker Layer),是以安全为目标的HTTP通道，即HTTP下加入了SSL层
+
+Cookies指某些网站为了辨别用户身份，进行会话跟踪而存在用户本地终端上的数据。
+Cookie属性:
+#Name:Cookie名称。
+#Value:Cookie的值。如果值为Unicode字符，需要为字符编码。如果值为二进制数据，则需要使用BASE64编码
+#Domain:可以访问该Cookie的域名。例如，如果设置为.zhihu.com，则所有以zhihu.com结尾的域名都可以访问该域名
+
+
+Robots协议
+Robots协议也称为爬虫协议、机器人协议，全称为网络爬虫排除标准(Robots Exclusion Protocol),用来告诉爬虫和搜索引擎哪些页面可以爬取，哪些不可以爬取。通常是一个叫作robots.txt的文本文件。
