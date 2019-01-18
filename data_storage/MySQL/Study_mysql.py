@@ -7,11 +7,25 @@ cursor = db.cursor()
 cursor.execute('select version()')
 # 调用fetchone()方法获得第一条数据。
 data = cursor.fetchone()
-print("Database version: %s"%data)
+data1 = {'id':'20121121',
+       'name':'贾朝峰',
+       'age':20
+}
+table = 'students'
+key = ','.join(data1.keys())
+values = ','.join(['%s']*len(data1))
+sql = 'INSERT INTO {table} ({keys}) VALUES ({values})'.format(table=table,keys=key,values=values)
+print(sql)
+try:
+    if cursor.execute(sql,tuple(data1.values())):
+        print('成功')
+        # 提交表单
+        db.commit()
+except:
+    print('失败')
+    # 提交失败，事件回滚
+    db.rollback()
 # 关闭数据库连接
 db.close()
-
-
-
 
 
