@@ -1,0 +1,53 @@
+headers:
+General部分：
+Request URL为请求的URL
+Request Method为请求的方法
+Status Code为响应状态码
+Remote Address为远程服务器的地址和端口
+Referrer Policy为Referrer判别策略
+
+Response Headers	//响应头
+#Date：标识相应产生的时间
+#Last-Modified：指定资源的最后修改时间
+#Content-Encoding：指定响应内容的编码
+#Server:包含服务器的信息，比如名称、版本号
+#Content-Type：文档类型，指定返回的数据类型是什么，如text/html代表返回HTML文档，application/x-javascript则代表返回JavaScript文件，image/jpeg则代表返回图片
+#Set-Cookie：设置Cookie。响应头中的Set-Cookie告诉浏览器需要将此内容放在Cookies中，下次请求携带Cookies请求
+#Expires：指定相应的过期时间，可以使代理服务器或浏览器将加载的内容更新到缓存中。如果再次访问时，就可以直接从缓存中加载，降低服务器负载，缩短加载时间
+
+Request Headers	//请求头
+请求部分分为请求头和请求体：
+
+请求头分为:
+Request Method	//请求方法
+Request URL	//请求网址
+Request Headers	//请求头
+Request Body	//请求体
+
+#Accept：请求报头域，用于指定客户端可接受哪些类型的信息
+
+#Accept-Language：指定客户端可接受的语言类型
+
+#Accept-Encoding：指定客户端可接受的内容编码
+
+#Host：用于指定请求资源的主机IP和端口号，其内容为请求URL的原始服务器或网关的位置。从HTTP1.1版本开始，请求必须包含此内容
+
+#Cookie：也常用于复数形式Cookies，这是网站为了辨别用户进行会话跟踪而存储在用户本地的数据。它的主要功能是维持当前访问会话。例如，我们输入用户名和密码成功登陆某个网站后，服务器会用会话保存登陆状态信息，后面我们每次刷新或请求该站点的其他页面时，会发现都是登陆状态，这就是Cookies的功劳。Cookies里有信息标识了我们所对应的服务器会话，服务器通过Cookies识别出是我们自己，并且查出当前状态是登陆状态，所以返回结果是登陆之后才能看到的网页内容。
+
+#Referer：此内容用来标识这个请求是从哪个页面发过来的，服务器可以拿到这一信息并做相应的处理，如做来源统计、防盗链处理等
+
+#User-Agent：简称UA，它是一个特殊的字符串头，可以使服务器识别客户使用的操作系统及版本、浏览器及版本等信息。在做爬虫时加上此信息，可以伪装为浏览器；如果不加，很可能会被识别出为爬虫。
+
+#Content-Type：也叫互联网媒体类型(Internet Media Type)或者MIME类型，在HTTP协议消息头中，它用来表示具体请求中的媒体类型信息。例如：text/html代表HTML格式，image/gif代表GIF图片，application/json代表JSON类型等等
+
+请求体
+#请求体一般承载的内容是POST请求中的表单数据，而对于GET请求，请求体则为空。
+Content-Type 和 POST提交数据方式的关系：
+#Content-Type类型					提交数据的方式
+application/x-www-form-urlencoded			表单数据
+multipart/form-data				表单文件上传
+application/json					序列化JSON数据
+text/xml						XML数据
+
+
+

@@ -1,0 +1,4 @@
+Downloader Middleware在整个框架中起作用的位置是一下两个:
+#在Scheduler调度出队列的Request发送给Doanloader下载之前，也就是我们可以在Request执行下载之前对其进行修改。
+#在下载后生成的Response发送给Spider之前，也就是我们可以在生成Response被Spider解析之前对其进行修改
+Downloader Middleware可以用来修改User-Agent、处理重定向、设置代理、失败重试、设置Cookies等功能。

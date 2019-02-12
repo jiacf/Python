@@ -1,0 +1,21 @@
+scrapy 命令分为全局命令和项目命令，全局命令表示可以在任何地方使用，而项目的命令只能在项目目录下使用
+全局的命令有：
+#startproject
+#genspider	//用于生成爬虫，scrapy提供了几种不同的模板用于生成spider，默认使用basic
+#settings
+#runspider
+#shell
+#fetch
+#view
+#version
+
+项目命令：
+
+crawl
+check
+list
+edit
+parse
+bench
+
+

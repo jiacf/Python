@@ -1,0 +1,4 @@
+Spider Middeware有如下三个作用：
+#我们可以在Downloader生成的Response发送给Spider之前，也就是在Response发送给Spider之前对Response进行处理
+#我们可以在Spider生成Request发送给Scheduler之前，也就是在Request发送给Scheduler之前对Request进行处理。
+#我们可以在Spider生成的Item发送给Item Pipeline之前，也就是在Item发送给Item Pipeline之前对Item进行处理

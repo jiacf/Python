@@ -1,0 +1,39 @@
+什么是Cookie：
+#简单来说就是当用于通过http协议访问一个服务器的时候，这个服务器会将一些Name/Value键值对返回给客户端浏览器，并将这些数据加上一些限制条件。在条件符合时，这个用户下次再访问服务器的时候，数据又被完整的带给服务器。
+#因为http是一种无状态协议，用户首次访问web站点的时候，服务器对用户一无所知。而Cookie就像是服务器给每个来访问的用户贴的标签，而这些标签就是对来访问的客户端的独有的身份的一个标识，这里就如同每个人的身份证一样，带着你的个人信息。二当一个客户端第一次连接过来的时候，服务端就会给他打一个标签，这里就如同给你发一个身份证，当你下载带着这个身份证来的时候，服务器就知道你是谁了。所以Cookie是存在客户端的，这里其实就是在你的浏览器中。
+
+Cookie的分类：
+#会话Cookie：不设置过期时间，保存在浏览器的内存中，关闭浏览器，Cookie便被销毁
+#普通Cookie：设置了过期时间，保存在硬盘上
+
+Cookie属性：
+#最开始的cookie是网景公司定义的，后来又有了RFC版本所以当前的Cookie有两个版本：Version 0 / Version 1他们有两种设置响应头的标识，分别是：Set-Cookie和Set-Cookie2。这两种的一些属性会有一些不同。常用的为Version 0
+
+Version 0 属性：
+#NAME = Value：键值对设置要保存的Name/Value，这里的name不能和其他属性的名字一样
+#Expires：过期时间
+#Domain：生成该Cookie的域名
+#Path:该Cookie是在当前的哪个路径下生成
+#Secure：如果设置了这个属性，那么指挥在SSH连接时才会回传该Cookie
+
+Version 1属性：
+#Name=Value：键值对设置要保存的Name/Value,这里的name不能和其他属性的名字一样
+#Comment：用于说明该Cookie的用途
+#CommentURL：该服务器为此Cookie提供URL注释
+#Discard:是否在会话结束丢弃该Cookie，默认是False
+#Domain:射程该Cookie的域名
+#Max-Age：最大失效时间，与Version 0 不同的是这里设置的是在多少秒后失效
+#Path:该Cookie是在当前的哪个路径下生成
+#Port：该Cookie在什么端口下可以回传服务端，如果有多个端口，以都好隔开
+#Secure：如果设置了这个属性，那么只会在SSH连接时才会回传Cookie
+
+Session：
+#Cookie可以让服务器端跟踪每个客户端的访问，但每次客户端的访问都必须传回这些Cookie，如果Cookie很多，就会增加客户端和服务端的传输数量，而Session的出现就是为了解决这个问题的。
+#同一个客户端每次和服务端交互时，不需要每次都传回所有的Cookie，而是只要传回一个ID，这个ID是客户端第一次访问服务器的时候生成的，而且每个客户端都有一个唯一的ID，客户端只要传回这个ID就行了，这个ID通常是NAME为JSESIONID的一个Cookie。所以Session其实是利用Cookie进行信息处理的。
+
+Cookie和Session的区别：
+#1.cookie和session的共同之处在于cookie和session都是用来跟踪浏览器用户身份和会话方式。
+#2.cookie和session的区别是cookie数据保存在客户端，session数据保存在服务器端。
+#3.相比于session，cookie不安全，别人可以分析存在本地的cookie并进行cookie欺骗，
+#4.session会在一定时间内保存在服务器上。当访问增多，会比较占用服务器的性能，如果考虑到减轻服务器性能方面，应当使用cookie
+#5.cookie和session各有优劣，所以将登陆等重要的信息存放为session，其他信息如果需要保留可以存放在cookie

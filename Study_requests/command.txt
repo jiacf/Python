@@ -1,0 +1,12 @@
+import requests	//导入requests模块
+
+response = requests.get('https://www.baidu.com')	//使用get请求网址
+response = requests.post('https://www.baidu.com')	//使用post请求网址
+response.status_code	//返回状态响应码
+response.text	//返回网址的HTML
+response.cootent	//返回二进制形式的HTML
+response.json()	//返回json格式
+response.headers	//返回网址头部信息
+response.cookies	//返回Cookie信息
+response.url	//实际请求的URL
+response.encoding		//编码格式

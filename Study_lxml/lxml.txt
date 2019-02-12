@@ -1,0 +1,2 @@
+lxml是Python的一个解析库，支持HTML和XML的解析，支持"XPath"解析方式，而且解析效率非常高。
+XPath全称XML path language,就是XML路径语言，它是一门在XML问道中查找信息的语言，最初是用来搜寻XML文档的，但是它同样适用于HTML文档的搜索。
