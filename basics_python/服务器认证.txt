@@ -1,0 +1,7 @@
+[radius]
+  <radius>
+ radius-server template "admin"
+  radius-server shared-key "lhwytx"
+  radius-server authentication 118.194.193.130 1812
+  radius-server authentication 118.194.193.133 1812 secondary
+  undo radius-server user-name domain-included
