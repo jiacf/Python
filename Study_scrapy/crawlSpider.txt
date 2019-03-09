@@ -1,0 +1,23 @@
+CrawlSpider继承自Spider类。除了Spider类的所有方法和属性，它还提供了一个非常重要的属性和方法
+#rules，它是爬取规则属性，是包含了一个或多个Rule对象的列表。每个Rule对爬取网站的动作都做了定义，CrawlSpider会读取rules的每一个Rule并进行解析。
+#parse_start_url(),它是一个可重写的方法。当start_urls里对应的Request得到Response时，该方法被调用，它会分析Response并必须返回item对象或Request对象。
+
+class scrapy.contrib.spiders.Rule(link_extractor , callback=None , cb_kwargs=None , follow=None , process_links=None , process_request=None)
+
+#link_extractor:是link extractor对象。通过它，Spider可以知道爬去的页面中提取哪些链接。爬取出的连接会自动生成Request。它又是一个数据结构，一般常用LxmlLinkExtractor对象作为参数。
+	class scrapy.linkextractors.lxmlhtml.lxmlLinkExtractor(allow=(),deny=(),allow_domains=(),deny_domains=(),deny_extensions=None,restrict_xpaths=(),restrict_css(),tags=('a','area'),attrs=('href'),canonicalize=False,unique=True,process_calue=None,strip=True)
+其中:
+##allow是一个正则表达式或正则表达式列表，它定义了从当前页面提取出的连接哪些是符合要求的，只有符合要求的链接才会被跟进。
+##deny则正好是跟allow相反
+##allow_domains定义了符合要求的域名，只有此域名的链接才会被跟进生成Request，它相当于域名白名单。
+##deny_domains跟allow_domains相反，相当于域名黑名单
+##restrict_xpaths定义了从当前页面中Xpath匹配的域名提取链接，其值是Xpath表达式或Xpath表达式列表。
+##restrict_css定义了从当前页面中CSS选择器匹配的区域提取连接，其值是CSS选择器或CSS选择器列表
+剩下其他参数代表了提取链接的标签、是否去重、链接的处理等内容
+
+#callback:即回调函数，和之前定义Request的callback有相同的意义。每次link_extractor中获取到链接时，该函数将会调用。该回调函数接收一个response作为其第一个参数，并返回一个包含Item或Request对象的列表。注意，避免使用parse()作为回调函数。由于CrawlSpider使用parse()来实现其逻辑，如果parse()方法覆盖了，CrawlSpider将会运行失败。
+#cb_kwargs:字典，它包含传递给回调函数的参数。
+#follow:布尔值，即True或False，它指定根据该规则从response提取的链接是否需要跟进，如果callback参数为None，follow默认设置为true，否则默认为False
+#process_links:指定处理函数，从link_extractor中获取到链接列表时，该函数将会调用，它主要用于过滤
+#process_request:同样是指定处理函数，根据该Rule的基本用法。但这些内容可能还不足以完成一个CrawlSpider爬虫。
+

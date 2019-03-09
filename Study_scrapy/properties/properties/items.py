@@ -11,4 +11,11 @@ import scrapy
 class PropertiesItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    img_url = scrapy.Field()
+    price = scrapy.Field()
+    name = scrapy.Field()
+    commit = scrapy.Field()
+    shop = scrapy.Field()
+    icons = scrapy.Field()
+
+
